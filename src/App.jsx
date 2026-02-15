@@ -1,7 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Birds from "./pages/Birds";
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white grid place-items-center">
-      <h1 className="text-5xl font-semibold">Tailwind works ✅</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/birds" element={<Birds />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
