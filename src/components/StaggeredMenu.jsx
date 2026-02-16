@@ -1,10 +1,7 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 export const StaggeredMenu = ({
-    
-  open,
-  setOpen,
   position = 'right',
   colors = ['#B19EEF', '#5227FF'],
   items = [],
@@ -22,8 +19,12 @@ export const StaggeredMenu = ({
   onMenuOpen,
   onMenuClose
 }) => {
-//   const [open, setOpen] = useState(false);
-  const openRef = useRef(open);
+  const [open, setOpen] = useState(false);
+  const openRef = useRef(false);
+
+  useEffect(() => {
+  openRef.current = open;
+}, [open]);
 
   const panelRef = useRef(null);
   const preLayersRef = useRef(null);
@@ -47,8 +48,6 @@ export const StaggeredMenu = ({
   const busyRef = useRef(false);
 
   const itemEntranceTweenRef = useRef(null);
-
-  
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -298,31 +297,6 @@ export const StaggeredMenu = ({
     });
   }, []);
 
-  const didMountRef = useRef(false);
-
-React.useEffect(() => {
-  // keep openRef synced
-  openRef.current = open;
-
-  // avoid playing animations on the very first render
-  if (!didMountRef.current) {
-    didMountRef.current = true;
-    return;
-  }
-
-  if (open) {
-    playOpen();
-    animateIcon(true);
-    animateColor(true);
-    animateText(true);
-  } else {
-    playClose();
-    animateIcon(false);
-    animateColor(false);
-    animateText(false);
-  }
-}, [open, playOpen, playClose, animateIcon, animateColor, animateText]);
-
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
     openRef.current = target;
@@ -353,6 +327,8 @@ React.useEffect(() => {
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
+  
+
   React.useEffect(() => {
     if (!closeOnClickAway || !open) return;
 
@@ -375,7 +351,7 @@ React.useEffect(() => {
 
   return (
     <div
-      className={`sm-scope z-40 ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden' : 'w-full h-full'}`}
+      className={`sm-scope z-40  pointer-events-none ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden' : 'w-full h-full'}`}
     >
       <div
         className={
@@ -411,7 +387,7 @@ React.useEffect(() => {
           className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
-          <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
+          {/* <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
             <img
               src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
               alt="Logo"
@@ -420,7 +396,7 @@ React.useEffect(() => {
               width={110}
               height={24}
             />
-          </div>
+          </div> */}
 
           <button
             ref={toggleBtnRef}
@@ -529,7 +505,7 @@ React.useEffect(() => {
 
       <style>{`
 .sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
-.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; }
+.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: flex-end; padding: 2em; background: transparent; pointer-events: none; z-index: 20; }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
 .sm-scope .sm-logo-img { display: block; height: 32px; width: auto; object-fit: contain; }
