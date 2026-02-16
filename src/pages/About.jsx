@@ -1,5 +1,6 @@
 // src/pages/About.jsx
 import pattern from "../assets/newbg.jpg";
+import placeholder from "../assets/placeholder.jpg";
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -15,28 +16,48 @@ export default function About() {
         }}
       />
 
+      <img
+        src={placeholder}
+        alt="Viviana"
+        className="
+          hidden md:block
+          absolute
+          right-[15%]
+          top-[55%]
+          -translate-y-1/2
+          w-[450px]
+          h-[650px]
+          object-cover
+          shadow-2xl
+          shadow-black/90
+        "
+      />
+
       {/* Content */}
       <div className="relative z-10 min-h-screen px-8 md:px-16 py-16 md:w-[60%]">
         <p className="text-sm tracking-widest text-zinc-400">ABOUT</p>
-        <h1 className="text-5xl md:text-6xl font-semibold mt-4">Hello, I’m Viviana!</h1>
+        <h1 className="text-5xl md:text-6xl font-semibold mt-4">
+          Hello, I’m Viviana!
+        </h1>
 
         <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed">
-          {/* your about text */}
+          {/* about text */}
           mimimi
         </p>
 
         <Link
-        to="/gallery"
+          to="/gallery"
           onClick={() => console.log("clicked gallery link")}
-        className="
+          className="
           inline-flex items-center gap-2 mt-10
           bg-white text-black
           px-6 py-3 rounded-full font-medium
           transition-all duration-300 transform
           hover:gap-4 hover:scale-105
-        ">
-        View Gallery
-        <span>→</span>
+        "
+        >
+          View Gallery
+          <span>→</span>
         </Link>
       </div>
     </div>
