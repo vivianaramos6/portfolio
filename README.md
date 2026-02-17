@@ -9,6 +9,8 @@ Clone the repository:
 ```bash
 git clone https://github.com/vivianaramos6/portafolio.git
 cd portafolio/art-portfolio 
+
+
 ```
 
 Install Dependencies: `npm install`

@@ -1,6 +1,6 @@
 // src/pages/About.jsx
-import pattern from "../assets/newbg.jpg";
-import placeholder from "../assets/placeholder.jpg";
+import pattern from "../assets/AboutPagePics/newbg.jpg";
+import placeholder from "../assets/AboutPagePics/placeholder.jpg";
 import { Link } from "react-router-dom";
 
 export default function About() {
