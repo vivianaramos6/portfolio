@@ -19,6 +19,7 @@ import JuvBlackCrownedNightHeron from "../assets/BirdPics/JuvBlackCrownedNightHe
 import BrownPelican from "../assets/BirdPics/BrownPelican.jpeg";
 import RufousCollaredSparrow from "../assets/BirdPics/RufousCollaredSparrow.jpeg";
 import UnidentifiedBird from "../assets/BirdPics/Unidentified.jpeg";
+import PearlyeyedTrasher from "../assets/BirdPics/PearlyeyedTrasher.jpeg";
 
 function debounce(func, wait) {
   let timeout;
@@ -350,7 +351,7 @@ class App {
     this.container = container;
     this.scrollSpeed = scrollSpeed;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
-    this.onSelect = onSelect; 
+    this.onSelect = onSelect;
     this.onCheckDebounce = debounce(this.onCheck, 200);
     this.createRenderer();
     this.createCamera();
@@ -392,13 +393,11 @@ class App {
       { image: GreatBlueHeron, text: "Juvenile Great Blue Heron" },
       { image: HumboldtPenguin, text: "Humboldt Penguin" },
       { image: RedTailedHawk, text: "Red Tailed Hawk" },
-      {
-        image: JuvBlackCrownedNightHeron,
-        text: "Juvenile Black Crowned Night Heron",
-      },
+      { image: JuvBlackCrownedNightHeron, text: "Juvenile Black Crowned Night Heron", },
       { image: BrownPelican, text: "Brown Pelican" },
       { image: RufousCollaredSparrow, text: "Rufous Collared Sparrow" },
       { image: UnidentifiedBird, text: "Unidentified Bird" },
+      {image: PearlyeyedTrasher, text: "Pearly-eyed Thrasher" },
     ];
 
     const galleryItems = items && items.length ? items : defaultItems;
@@ -457,47 +456,47 @@ class App {
   }
 
   handleClick(e) {
-     console.log('handleClick fired', e);
-      const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-  const y = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+    console.log("handleClick fired", e);
+    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const y = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
 
-  // Convert screen coords to viewport/world coords
-   const rect = this.gl.canvas.getBoundingClientRect();
-  const canvasX = x - rect.left;
-  const canvasY = y - rect.top;
+    // Convert screen coords to viewport/world coords
+    const rect = this.gl.canvas.getBoundingClientRect();
+    const canvasX = x - rect.left;
+    const canvasY = y - rect.top;
 
-  const ndcX = (canvasX / rect.width) * 2 - 1;
-  const ndcY = -(canvasY / rect.height) * 2 + 1;
+    const ndcX = (canvasX / rect.width) * 2 - 1;
+    const ndcY = -(canvasY / rect.height) * 2 + 1;
 
-  const worldX = ndcX * (this.viewport.width / 2);
-  const worldY = ndcY * (this.viewport.height / 2);
+    const worldX = ndcX * (this.viewport.width / 2);
+    const worldY = ndcY * (this.viewport.height / 2);
 
-  let hit = null;
-  for (const media of this.medias) {
-    const px = media.plane.position.x;
-    const py = media.plane.position.y;
-    const hw = media.plane.scale.x / 2;
-    const hh = media.plane.scale.y / 2;
-    if (
-      worldX >= px - hw &&
-      worldX <= px + hw &&
-      worldY >= py - hh &&
-      worldY <= py + hh
-    ) {
-      hit = media;
-      break;
+    let hit = null;
+    for (const media of this.medias) {
+      const px = media.plane.position.x;
+      const py = media.plane.position.y;
+      const hw = media.plane.scale.x / 2;
+      const hh = media.plane.scale.y / 2;
+      if (
+        worldX >= px - hw &&
+        worldX <= px + hw &&
+        worldY >= py - hh &&
+        worldY <= py + hh
+      ) {
+        hit = media;
+        break;
+      }
     }
-  }
 
-  console.log('hit', hit);
+    console.log("hit", hit);
 
-  if (hit && hit.onSelect) {
-    hit.onSelect(hit.image);
-     console.log('calling onSelect with', hit.image);
-  hit.onSelect(hit.image);
-  } else {
-  console.log('hit exists but onSelect missing', hit?.onSelect);
-}
+    if (hit && hit.onSelect) {
+      hit.onSelect(hit.image);
+      console.log("calling onSelect with", hit.image);
+      hit.onSelect(hit.image);
+    } else {
+      console.log("hit exists but onSelect missing", hit?.onSelect);
+    }
   }
 
   onCheck() {

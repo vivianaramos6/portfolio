@@ -17,7 +17,7 @@ export default function Home({setMenuOpen}) {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center px-6">
       <h1 className="text-6xl md:text-7xl font-semibold mb-4">
-        mimimi
+        Vivi's Portfolio
       </h1>
 
           <p className="text-zinc-400 max-w-md">

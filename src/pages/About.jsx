@@ -1,6 +1,6 @@
 // src/pages/About.jsx
 import pattern from "../assets/AboutPagePics/newbg.jpg";
-import placeholder from "../assets/AboutPagePics/placeholder.jpg";
+import Vivi from "../assets/AboutPagePics/Vivi.jpg";
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -17,7 +17,7 @@ export default function About() {
       />
 
       <img
-        src={placeholder}
+        src={Vivi}
         alt="Viviana"
         className="
           hidden md:block
