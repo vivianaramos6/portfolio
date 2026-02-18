@@ -42,8 +42,12 @@ export default function About() {
 
         <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed">
           {/* about text */}
-          mimimi
+          A computer science and engineering student from University of Puerto Rico Mayagüez, who has always loved art
+           just as much as technology. While I spend my days building my technical skills, I also find joy in drawing, painting, and experimenting with different mediums.
+            Birds, portraits, and small everyday details inspire much of my work.
         </p>
+
+        <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed" > I've created this space to bring all of these interests together in one place and share them with others! </p>
 
         <Link
           to="/gallery"
