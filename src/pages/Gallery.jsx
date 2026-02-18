@@ -1,64 +1,125 @@
 import { Link } from "react-router-dom";
+import Walter from "../assets/GalleryPics/walter.jpeg";
+import Leia from "../assets/GalleryPics/leia.jpeg";
+import portrait2 from "../assets/GalleryPics/portrait2Digital.jpeg";
+import portrait1 from "../assets/GalleryPics/portrait1Lapiz.jpeg";
+import buhoPintura from "../assets/GalleryPics/buhoPintura.jpeg";
+import Cardinal from "../assets/GalleryPics/cardinal.jpeg";
+import mamiLapiz from "../assets/GalleryPics/mamiLapiz.jpeg";
+import SideProfile from "../assets/GalleryPics/sideProfilePastel.jpg";
+import HeadShot from "../assets/GalleryPics/headshotpastel.jpg";
+import Backpic from "../assets/GalleryPics/backpic.jpg";
+import dPortrait from "../assets/GalleryPics/dportrait.jpg"; 
+import gafasPastel from "../assets/GalleryPics/gafasPastel.jpeg";
+import bodyStudies from "../assets/GalleryPics/bodyStudies.jpg";
+import sketchPortrait from "../assets/GalleryPics/sketchPortait.jpg";
 
+import { useState } from "react";
 
 const pieces = [
-  {
-    title: "Piece Title 1",
-    description: "Optional short caption",
-    image: piece1,
-    slug: "piece-title-1",
+   { title: "Back Pic",
+ description: "Optional short caption",
+  image: Backpic,
   },
   {
-    title: "Piece Title 2",
+    title: "Walter",
     description: "Optional short caption",
-    image: piece2,
-    slug: "piece-title-2",
+    image: Walter,
   },
+  {
+    title: "Leia",
+    description: "Optional short caption",
+    image: Leia,
+  },
+  {
+    title: "Portrait 1",
+    description: "Optional short caption",
+    image: portrait2,
+  },
+
+  {
+    title: "Portrait 2",
+    description: "Optional short caption",
+    image: portrait1,
+  },
+  {
+    title: "Barn Owl",
+    description: "Optional short caption",
+    image: buhoPintura,
+  },
+  {
+    title: "Cardinal",
+    description: "Optional short caption",
+    image: Cardinal,
+  },
+  {
+    title: "Mami",
+    description: "Optional short caption",
+    image: mamiLapiz,
+  },
+  {
+    title: "Side Profile",
+    description: "Optional short caption",
+    image: SideProfile,
+  },
+  { title: "Head Shot",
+   description: "Optional short caption",
+    image: HeadShot,
+  },
+  { title: "3D Portrait",
+   description: "Optional short caption",
+    image: dPortrait,
+  },
+  { title: "Gafas Pastel",
+   description: "Optional short caption",
+    image: gafasPastel,
+  },
+  { title: "Body Studies",
+    description: "Optional short caption",
+    image: bodyStudies,
+  },
+  { title: "Sketch Portrait",
+    description: "Optional short caption",
+    image: sketchPortrait,
+  },
+ 
 ];
 
 
 
 export default function Gallery() {
+
+  const [activePiece, setActivePiece] = useState(null);
+
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-16 py-14">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-semibold">Gallery</h1>
         <p className="text-zinc-400 mt-3 max-w-2xl">
-          A curated selection of work — hover to reveal the title.
+          A curated selection of work - hover to reveal the title.
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Intro tile (first grid cell) */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-            <p className="text-xs tracking-widest text-zinc-400">COLLECTION</p>
-            <h2 className="text-2xl font-semibold mt-3">Selected pieces</h2>
-            <p className="text-zinc-300 mt-3 leading-relaxed">
-              Mini description like the reference site — quick context about the series,
-              mediums, or what you’re exploring.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <Link
-                to="/about"
-                className="inline-flex items-center rounded-full px-5 py-2 bg-white text-black font-medium hover:scale-[1.02] transition"
-              >
-                About
-              </Link>
-              <a
-                href="#grid"
-                className="inline-flex items-center rounded-full px-5 py-2 border border-white/15 text-white hover:bg-white/10 transition"
-              >
-                Explore
-              </a>
-            </div>
-          </div>
+         <div className="p-7">
+  <p className="text-xs tracking-widest text-zinc-400">COLLECTION</p>
+  <h2 className="text-2xl font-semibold mt-3">Vivi's Favorites</h2>
+  <p className="text-zinc-300 mt-3 leading-relaxed max-w-sm">
+    This collection brings together some of my proudest works 
+    created using a variety of mediums, including paint, oil pastels, colored pencils,
+     and digital illustration. Each piece reflects experimentation with color, texture,
+      and different ways of expressing ideas visually!
+  </p>
+</div>
+         
 
           {/* Art tiles */}
-          {pieces.map((p) => (
-            <Link
-              key={p.slug}
-              to={`/gallery/${p.slug}`} // you can change this to a modal later
-              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5"
-              id="grid"
+          {pieces.map((p, idx) => (
+              <button
+              key={`${p.title}-${idx}`}
+              type="button"
+              onClick={() => setActivePiece(p)}
+              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 text-left"
             >
               <img
                 src={p.image}
@@ -76,10 +137,49 @@ export default function Gallery() {
                   <p className="text-sm text-zinc-200/90 mt-1">{p.description}</p>
                 )}
               </div>
-            </Link>
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {activePiece && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6"
+          onClick={() => setActivePiece(null)}
+        >
+          <div
+            className="w-full max-w-4xl rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <div>
+                <p className="text-lg font-semibold">{activePiece.title}</p>
+                {activePiece.description && (
+                  <p className="text-sm text-zinc-400 mt-1">{activePiece.description}</p>
+                )}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setActivePiece(null)}
+                className="text-zinc-300 hover:text-white transition"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="p-4">
+              <img
+                src={activePiece.image}
+                alt={activePiece.title}
+                className="w-full max-h-[75vh] object-contain rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
