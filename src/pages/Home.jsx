@@ -1,35 +1,41 @@
 
 // import StaggeredMenu from "../components/StaggeredMenu";
+    import Beams from '../components/BeamsBg';
 
-export default function Home({setMenuOpen}) {
-
-  // console.log("setMenuOpen is", setMenuOpen);
-  // //  const [menuOpen, setMenuOpen] = useState(false);
-
-    const menuItems = [
-    { label: "Home", ariaLabel: "Go to home page", link: "/" },
-    { label: "About", ariaLabel: "About me", link: "/about" },
-    { label: "Gallery", ariaLabel: "Art gallery", link: "/gallery" },
-    { label: "Birds", ariaLabel: "Bird log", link: "/birds" },
-  ];
-
-
+export default function Home({}) 
+ {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center px-6">
-      <h1 className="text-6xl md:text-7xl font-semibold mb-4">
-        Vivi's Portfolio
-      </h1>
-
-          <p className="text-zinc-400 max-w-md">
-       A personal portfolio featuring artwork, software projects, and creative exploration.
-      </p>
+    <div className="relative min-h-screen bg-black text-white overflow-hidden">
       
+      {/* Background layer */}
+      <div className="absolute inset-0 z-0">
+        <Beams
+          beamWidth={2}
+          beamHeight={18}
+          beamNumber={20}
+          lightColor="#d7b88d"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={30}
+        />
+      </div>
 
-      <p className="mt-8 text-zinc-500">
-  Use the menu to explore →
-</p>
+      {/* Foreground content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-screen">
+        <h1 className="text-6xl md:text-7xl font-semibold mb-4">
+          Vivi's Portfolio
+        </h1>
 
-     
+        <p className="text-zinc-300 max-w-md">
+          A personal portfolio featuring artwork, software projects, and creative exploration.
+        </p>
+
+        <p className="mt-8 text-zinc-400">
+          Use the menu to explore →
+        </p>
+      </div>
+
     </div>
   );
 }
