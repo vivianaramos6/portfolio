@@ -1,5 +1,4 @@
 
-// import StaggeredMenu from "../components/StaggeredMenu";
     import Beams from '../components/BeamsBg';
 
 export default function Home({}) 
@@ -22,17 +21,13 @@ export default function Home({})
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-screen">
-        <h1 className="text-6xl md:text-7xl font-semibold mb-4">
+      <div className="relative z-10 flex flex-col items-center justify-start pt-74 text-center px-6 min-h-screen">
+        <h1 className="text-7xl md:text-8xl font-semibold mb-4">
           Vivi's Portfolio
         </h1>
 
-        <p className="text-zinc-300 max-w-md">
+        <p className="text-zinc-300 max-w-md text-lg">
           A personal portfolio featuring artwork, software projects, and creative exploration.
-        </p>
-
-        <p className="mt-8 text-zinc-400">
-          Use the menu to explore →
         </p>
       </div>
 

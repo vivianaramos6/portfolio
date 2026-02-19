@@ -17,69 +17,69 @@ import sketchPortrait from "../assets/GalleryPics/sketchPortait.jpg";
 import { useState } from "react";
 
 const pieces = [
-   { title: "Back Pic",
- description: "Optional short caption",
+   { title: "Tipa con Guantes",
+ description: "Oil Pastel on Paper, 2026",
   image: Backpic,
   },
   {
     title: "Walter",
-    description: "Optional short caption",
+    description: "Digital Illustration, 2025",
     image: Walter,
   },
   {
     title: "Leia",
-    description: "Optional short caption",
+    description: "Acrylic on Canvas, 2020",
     image: Leia,
   },
   {
-    title: "Portrait 1",
-    description: "Optional short caption",
+    title: "Tipa Digital",
+    description: "Digital Illustration, 2020",
     image: portrait2,
   },
 
   {
-    title: "Portrait 2",
-    description: "Optional short caption",
+    title: "Tipa Mirando para el lado",
+    description: "Colored Pencil on Paper, 2020",
     image: portrait1,
   },
   {
     title: "Barn Owl",
-    description: "Optional short caption",
+    description: "Acrylic on Canvas, 2020",
     image: buhoPintura,
   },
   {
     title: "Cardinal",
-    description: "Optional short caption",
+    description: "Acrylic on Canvas, 2020",
     image: Cardinal,
   },
   {
     title: "Mami",
-    description: "Optional short caption",
+    description: "Pencil on Paper, 2020",
     image: mamiLapiz,
   },
   {
-    title: "Side Profile",
-    description: "Optional short caption",
+    title: "Tipa mirando para el otro lado",
+    description: "Pastel on Paper, 2021",
     image: SideProfile,
   },
-  { title: "Head Shot",
-   description: "Optional short caption",
+  { title: "Otra Tipa",
+   description: "Pastel on Paper, 2024",
     image: HeadShot,
   },
   { title: "3D Portrait",
-   description: "Optional short caption",
+   description: "Markers on Paper, 2022",
     image: dPortrait,
   },
   { title: "Gafas Pastel",
-   description: "Optional short caption",
+   description: "Pastel on Paper, 2025",
     image: gafasPastel,
   },
   { title: "Body Studies",
-    description: "Optional short caption",
+    description: "Alcohol markers on Paper, 2024",
     image: bodyStudies,
   },
   { title: "Sketch Portrait",
-    description: "Optional short caption",
+    description: "Pencil on Paper, 2023",
     image: sketchPortrait,
   },
  
@@ -101,7 +101,7 @@ export default function Gallery() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Intro tile (first grid cell) */}
-         <div className="p-7">
+         <div className="p-7 h-72">
   <p className="text-xs tracking-widest text-zinc-400">COLLECTION</p>
   <h2 className="text-2xl font-semibold mt-3">Vivi's Favorites</h2>
   <p className="text-zinc-300 mt-3 leading-relaxed max-w-sm">

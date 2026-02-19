@@ -41,6 +41,7 @@ export default function About() {
           object-cover
           shadow-2xl
           shadow-black/90
+          rounded-2xl 
         "
       />
 
