@@ -38,11 +38,10 @@ export default function App() {
         accentColor="#ff7a66"
       />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/birds" element={<Birds />} />
-        <Route path="/" element={<Home setMenuOpen={setMenuOpen} />} />
+        <Route path="/" element={<Home  />} />
       </Routes>
     </BrowserRouter>
   );

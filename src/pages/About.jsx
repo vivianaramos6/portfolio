@@ -51,7 +51,7 @@ export default function About() {
         "
       />
 
-      {/* Content */}
+
       <div className="relative z-10 min-h-screen px-8 md:px-16 py-16 md:w-[60%]">
         <p className="text-sm tracking-widest text-zinc-400">ABOUT</p>
         <h1 className="text-5xl md:text-6xl font-semibold mt-4">

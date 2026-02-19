@@ -12,7 +12,7 @@ export default function Birds() {
         style={{ backgroundImage: `url(${bgImage})` }}
       />
 
-       <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Header */}
       <div className="relative z-10 p-8 text-center flex flex-col items-center mt-20">
@@ -25,7 +25,6 @@ export default function Birds() {
         </p>
       </div>
 
-      {/* Gallery fills remaining space */}
       <div className="flex-1 relative">
         <CircularGallery
           textColor="#ffffff"
@@ -40,12 +39,13 @@ export default function Birds() {
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={() => setSelectedImage(null)}
+          onMouseDown={() => setSelectedImage(null)}
         >
           <img
             src={selectedImage}
             alt="Bird"
             className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
+            onMouseDown={(e) => e.stopPropagation()}
           />
         </div>
       )}

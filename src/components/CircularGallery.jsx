@@ -317,11 +317,18 @@ class Media {
         ];
       }
     }
-    this.scale = this.screen.height / 1500;
-    this.plane.scale.y =
-      (this.viewport.height * (700 * this.scale)) / this.screen.height;
-    this.plane.scale.x =
-      (this.viewport.width * (500 * this.scale)) / this.screen.width;
+
+    
+
+   const isMobile = this.screen.width < 768;
+this.scale = this.screen.height / 1500;
+const cardHeight = isMobile ? 400 : 700;
+const cardWidth = isMobile ? 320 : 500;
+this.plane.scale.y =
+  (this.viewport.height * (cardHeight * this.scale)) / this.screen.height;
+this.plane.scale.x =
+  (this.viewport.width * (cardWidth * this.scale)) / this.screen.width;
+
     this.plane.program.uniforms.uPlaneSizes.value = [
       this.plane.scale.x,
       this.plane.scale.y,
@@ -493,7 +500,7 @@ class App {
     if (hit && hit.onSelect) {
       hit.onSelect(hit.image);
       console.log("calling onSelect with", hit.image);
-      hit.onSelect(hit.image);
+     
     } else {
       console.log("hit exists but onSelect missing", hit?.onSelect);
     }

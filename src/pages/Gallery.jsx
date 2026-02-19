@@ -100,8 +100,7 @@ export default function Gallery() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Intro tile (first grid cell) */}
-         {/* Intro tile */}
+          {/* Intro tile */}
 <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 h-72">
   <p className="text-xs tracking-widest text-zinc-400">
     COLLECTION
