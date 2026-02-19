@@ -1,6 +1,6 @@
 import CircularGallery from "../components/CircularGallery";
 import { useState } from "react";
-import bgImage from "../assets/BirdPics/BirdsBg.jpg";
+import bgImage from "../assets/BirdPics/birdBg.jpg";
 export default function Birds() {
   const [selectedImage, setSelectedImage] = useState(null);
 
