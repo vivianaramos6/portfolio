@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { 
+      "source": "/((?!BirdPics/).*)",
+      "destination": "/index.html" 
+    }
   ],
   "headers": [
     {
