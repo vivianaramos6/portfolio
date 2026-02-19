@@ -9,7 +9,7 @@ export default function Birds() {
       {/* Background image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center blur-sm opacity-50"
-        style={{ backgroundImage: `url(/BirdPics/birdsbg.jpg)` }}
+        style={{ backgroundImage: `url(/BirdPics/birdBg.jpg)` }}
       />
 
       <div className="absolute inset-0 bg-black/60" />

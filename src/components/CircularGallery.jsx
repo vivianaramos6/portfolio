@@ -10,16 +10,7 @@ import {
   Vec2,
 } from "ogl";
 import { useEffect, useRef } from "react";
-import AnnasHummingbird from "../assets/BirdPics/AnnasHummingbird.jpeg";
-import BlackVulture from "../assets/BirdPics/BlackVulture.jpeg";
-import GreatBlueHeron from "../assets/BirdPics/GreatBlueHeron.jpeg";
-import HumboldtPenguin from "../assets/BirdPics/HumboldtPenguin.jpeg";
-import RedTailedHawk from "../assets/BirdPics/RedTailedHawk.jpeg";
-import JuvBlackCrownedNightHeron from "../assets/BirdPics/JuvBlackCrownedNightHeron.jpeg";
-import BrownPelican from "../assets/BirdPics/BrownPelican.jpeg";
-import RufousCollaredSparrow from "../assets/BirdPics/RufousCollaredSparrow.jpeg";
-import UnidentifiedBird from "../assets/BirdPics/Unidentified.jpeg";
-import PearlyeyedTrasher from "../assets/BirdPics/PearlyEyedTrasher.jpeg";
+
 
 function debounce(func, wait) {
   let timeout;
@@ -395,16 +386,16 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: AnnasHummingbird, text: "Annas Hummingbird" },
-      { image: BlackVulture, text: "Black Vulture" },
-      { image: GreatBlueHeron, text: "Juvenile Great Blue Heron" },
-      { image: HumboldtPenguin, text: "Humboldt Penguin" },
-      { image: RedTailedHawk, text: "Red Tailed Hawk" },
-      { image: JuvBlackCrownedNightHeron, text: "Juvenile Black Crowned Night Heron", },
-      { image: BrownPelican, text: "Brown Pelican" },
-      { image: RufousCollaredSparrow, text: "Rufous Collared Sparrow" },
-      { image: UnidentifiedBird, text: "Unidentified Bird" },
-      {image: PearlyeyedTrasher, text: "Pearly-eyed Thrasher" },
+       { image: "/BirdPics/AnnasHummingbird.jpeg", text: "Annas Hummingbird" },
+  { image: "/BirdPics/BlackVulture.jpeg", text: "Black Vulture" },
+  { image: "/BirdPics/GreatBlueHeron.jpeg", text: "Juvenile Great Blue Heron" },
+  { image: "/BirdPics/HumboldtPenguin.jpeg", text: "Humboldt Penguin" },
+  { image: "/BirdPics/RedTailedHawk.jpeg", text: "Red Tailed Hawk" },
+  { image: "/BirdPics/JuvBlackCrownedNightHeron.jpeg", text: "Juvenile Black Crowned Night Heron" },
+  { image: "/BirdPics/BrownPelican.jpeg", text: "Brown Pelican" },
+  { image: "/BirdPics/RufousCollaredSparrow.jpeg", text: "Rufous Collared Sparrow" },
+  { image: "/BirdPics/Unidentified.jpeg", text: "Unidentified Bird" },
+  { image: "/BirdPics/PearlyEyedTrasher.jpeg", text: "Pearly-eyed Thrasher" },
     ];
 
     const galleryItems = items && items.length ? items : defaultItems;
