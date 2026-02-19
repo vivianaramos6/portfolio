@@ -19,7 +19,7 @@ import JuvBlackCrownedNightHeron from "../assets/BirdPics/JuvBlackCrownedNightHe
 import BrownPelican from "../assets/BirdPics/BrownPelican.jpeg";
 import RufousCollaredSparrow from "../assets/BirdPics/RufousCollaredSparrow.jpeg";
 import UnidentifiedBird from "../assets/BirdPics/Unidentified.jpeg";
-import PearlyeyedTrasher from "../assets/BirdPics/PearlyeyedTrasher.jpeg";
+import PearlyeyedTrasher from "../assets/BirdPics/PearlyEyedTrasher.jpeg";
 
 function debounce(func, wait) {
   let timeout;
