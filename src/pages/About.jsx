@@ -1,12 +1,23 @@
-// src/pages/About.jsx
+
 import pattern from "../assets/AboutPagePics/newbg.jpg";
 import Vivi from "../assets/AboutPagePics/Vivi.jpg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function About() {
+  const [resumeOpen, setResumeOpen] = useState(false);
+
+  const buttonStyle = `
+  inline-flex items-center gap-2
+  bg-white text-black
+  px-6 py-3 rounded-full font-medium
+  transition-all duration-300 transform
+  hover:gap-4 hover:scale-105
+`;
+
   return (
     <div className="min-h-screen relative bg-black text-white">
-      {/* Right pattern panel */}
+      {/* Background pattern */}
       <div
         className="absolute top-0 right-0 h-full w-[40%] hidden md:block"
         style={{
@@ -41,29 +52,63 @@ export default function About() {
         </h1>
 
         <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed">
-          {/* about text */}
-          A computer science and engineering student from University of Puerto Rico Mayagüez, who has always loved art
-           just as much as technology. While I spend my days building my technical skills, I also find joy in drawing, painting, and experimenting with different mediums.
-            Birds, portraits, and small everyday details inspire much of my work.
+          A computer science and engineering student from University of Puerto
+          Rico Mayagüez, who has always loved art just as much as technology.
+          While I spend my days building my technical skills, I also find joy in
+          drawing, painting, and experimenting with different mediums. Birds,
+          portraits, and small everyday details inspire much of my work.
         </p>
 
-        <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed" > I've created this space to bring all of these interests together in one place and share them with others! </p>
+        <p className="text-zinc-300 max-w-xl mt-6 leading-relaxed">
+          I've created this space to bring all of these interests together in
+          one place and share them with others!
+        </p>
 
-        <Link
-          to="/gallery"
-          onClick={() => console.log("clicked gallery link")}
-          className="
-          inline-flex items-center gap-2 mt-10
-          bg-white text-black
-          px-6 py-3 rounded-full font-medium
-          transition-all duration-300 transform
-          hover:gap-4 hover:scale-105
-        "
-        >
-          View Gallery
-          <span>→</span>
-        </Link>
+        <div className="flex gap-4 mt-10">
+          <button onClick={() => setResumeOpen(true)} className={buttonStyle}>
+            Resume
+          </button>
+          <Link
+            to="/gallery"
+            onClick={() => console.log("clicked gallery link")}
+            className={buttonStyle}
+          >
+            View Gallery
+            <span>→</span>
+          </Link>
+        </div>
       </div>
+
+      {resumeOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
+          onClick={() => setResumeOpen(false)}
+        >
+          <div
+            className="w-full max-w-4xl h-[85vh] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <p className="text-lg font-semibold">Resume</p>
+
+              <button
+                onClick={() => setResumeOpen(false)}
+                className="text-zinc-300 hover:text-white transition text-xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* PDF Viewer */}
+            <iframe
+              title="Resume"
+              src="/SpringResumeVVRV.pdf"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
