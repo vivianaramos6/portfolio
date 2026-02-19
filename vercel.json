@@ -1,6 +1,5 @@
 {
-  "routes": [
-    { "src": "/BirdPics/(.*)", "dest": "/BirdPics/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
