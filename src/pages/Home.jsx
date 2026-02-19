@@ -21,7 +21,7 @@ export default function Home({})
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-10 flex flex-col items-center justify-start pt-74 text-center px-6 min-h-screen">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-screen">
         <h1 className="text-7xl md:text-8xl font-semibold mb-4">
           Vivi's Portfolio
         </h1>

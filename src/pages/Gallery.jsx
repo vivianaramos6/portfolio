@@ -101,14 +101,21 @@ export default function Gallery() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Intro tile (first grid cell) */}
-         <div className="p-7 h-72">
-  <p className="text-xs tracking-widest text-zinc-400">COLLECTION</p>
-  <h2 className="text-2xl font-semibold mt-3">Vivi's Favorites</h2>
-  <p className="text-zinc-300 mt-3 leading-relaxed max-w-sm">
-    This collection brings together some of my proudest works 
-    created using a variety of mediums, including paint, oil pastels, colored pencils,
-     and digital illustration. Each piece reflects experimentation with color, texture,
-      and different ways of expressing ideas visually!
+         {/* Intro tile */}
+<div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 h-72">
+  <p className="text-xs tracking-widest text-zinc-400">
+    COLLECTION
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-semibold mt-3">
+    Vivi's Favorites
+  </h2>
+
+  <p className="text-zinc-300 mt-3 leading-relaxed text-sm sm:text-base">
+    This collection brings together some of my proudest works created using a variety of
+    mediums, including paint, oil pastels, colored pencils, and digital illustration.
+    Each piece reflects experimentation with color, texture, and different ways of
+    expressing ideas visually.
   </p>
 </div>
          

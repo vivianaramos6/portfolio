@@ -16,7 +16,13 @@ export default function About() {
 `;
 
   return (
-    <div className="min-h-screen relative bg-black text-white">
+     <div className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* MOBILE:*/}
+      <div
+        className="absolute inset-0 md:hidden bg-cover bg-center opacity-30"
+        style={{ backgroundImage: `url(${pattern})` }}
+      />
+
       {/* Background pattern */}
       <div
         className="absolute top-0 right-0 h-full w-[40%] hidden md:block"
@@ -37,7 +43,7 @@ export default function About() {
           top-[55%]
           -translate-y-1/2
           w-[450px]
-          h-[650px]
+          h-[625px]
           object-cover
           shadow-2xl
           shadow-black/90
