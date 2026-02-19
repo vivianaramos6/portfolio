@@ -1,6 +1,6 @@
 import CircularGallery from "../components/CircularGallery";
 import { useState } from "react";
-import bgImage from "../assets/BirdPics/birdBg.jpg";
+
 export default function Birds() {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -9,7 +9,7 @@ export default function Birds() {
       {/* Background image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center blur-sm opacity-50"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{ backgroundImage: `url(/BirdPics/birdsbg.jpg)` }}
       />
 
       <div className="absolute inset-0 bg-black/60" />
