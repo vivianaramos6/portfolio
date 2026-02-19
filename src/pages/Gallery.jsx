@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Walter from "../assets/GalleryPics/walter.jpeg";
-import Leia from "../assets/GalleryPics/leia.jpeg";
+import Walter from "../assets/GalleryPics/Walter.jpeg";
+import Leia from "../assets/GalleryPics/Leia.jpeg";
 import portrait2 from "../assets/GalleryPics/portrait2Digital.jpeg";
 import portrait1 from "../assets/GalleryPics/portrait1Lapiz.jpeg";
 import buhoPintura from "../assets/GalleryPics/buhoPintura.jpeg";
@@ -8,10 +8,10 @@ import Cardinal from "../assets/GalleryPics/cardinal.jpeg";
 import mamiLapiz from "../assets/GalleryPics/mamiLapiz.jpeg";
 import SideProfile from "../assets/GalleryPics/sideProfilePastel.jpg";
 import HeadShot from "../assets/GalleryPics/headshotpastel.jpg";
-import Backpic from "../assets/GalleryPics/backpic.jpg";
+import Backpic from "../assets/GalleryPics/Backpic.jpg";
 import dPortrait from "../assets/GalleryPics/dportrait.jpg"; 
 import gafasPastel from "../assets/GalleryPics/gafasPastel.jpeg";
-import bodyStudies from "../assets/GalleryPics/bodyStudies.jpg";
+import bodyStudies from "../assets/GalleryPics/BodyStudies.jpg";
 import sketchPortrait from "../assets/GalleryPics/sketchPortait.jpg";
 
 import { useState } from "react";
