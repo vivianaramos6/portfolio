@@ -110,7 +110,7 @@ export default function About() {
             {/* PDF Viewer */}
             <iframe
               title="Resume"
-              src="/SpringUpdatedVVRV.pdf"
+              src="/06resVVRV.pdf"
               className="w-full h-full"
             />
           </div>
